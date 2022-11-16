@@ -16,7 +16,7 @@ const client = new Client({
 
 client.connect();
 
-serverApp.get("/users", async (req, res) => {
+app.get("/users", async (req, res) => {
   const response = await client.query("SELECT * FROM crc_users LIMIT 5");
   console.log(response.rows);
   res.send("Connected to DBase");
